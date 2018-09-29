@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.chkStatic = new System.Windows.Forms.CheckBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cmbColumnType = new System.Windows.Forms.ComboBox();
             this.cmbComparison = new System.Windows.Forms.ComboBox();
@@ -53,16 +54,17 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.chkStatic, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cmbColumnType, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbComparison, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cmbTimingMethod, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnRemoveColumn, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnMoveDown, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnMoveUp, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cmbComparison, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbTimingMethod, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnRemoveColumn, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnMoveDown, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnMoveUp, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -72,7 +74,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 146);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 171);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -89,7 +91,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 95);
+            this.label2.Location = new System.Drawing.Point(3, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 41;
@@ -109,11 +111,20 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 66);
+            this.label4.Location = new System.Drawing.Point(72, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 45;
             this.label4.Text = "Comparison:";
+            //
+            // chkStatic
+            //
+            this.chkStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkStatic.AutoSize = true;
+            this.chkStatic.Location = new System.Drawing.Point(3, 66);
+            this.chkStatic.Name = "checkStatic";
+            this.chkStatic.Size = new System.Drawing.Size(92, 21);
+            this.chkStatic.Text = "Static column";
             // 
             // txtName
             // 
@@ -150,7 +161,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.cmbComparison, 3);
             this.cmbComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbComparison.FormattingEnabled = true;
-            this.cmbComparison.Location = new System.Drawing.Point(93, 62);
+            this.cmbComparison.Location = new System.Drawing.Point(93, 91);
             this.cmbComparison.Name = "cmbComparison";
             this.cmbComparison.Size = new System.Drawing.Size(325, 21);
             this.cmbComparison.TabIndex = 47;
@@ -166,7 +177,7 @@
             "Current Timing Method",
             "Real Time",
             "Game Time"});
-            this.cmbTimingMethod.Location = new System.Drawing.Point(93, 91);
+            this.cmbTimingMethod.Location = new System.Drawing.Point(93, 120);
             this.cmbTimingMethod.Name = "cmbTimingMethod";
             this.cmbTimingMethod.Size = new System.Drawing.Size(325, 21);
             this.cmbTimingMethod.TabIndex = 48;
@@ -175,7 +186,7 @@
             // btnRemoveColumn
             // 
             this.btnRemoveColumn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRemoveColumn.Location = new System.Drawing.Point(324, 119);
+            this.btnRemoveColumn.Location = new System.Drawing.Point(324, 148);
             this.btnRemoveColumn.Name = "btnRemoveColumn";
             this.btnRemoveColumn.Size = new System.Drawing.Size(94, 23);
             this.btnRemoveColumn.TabIndex = 52;
@@ -186,7 +197,7 @@
             // btnMoveDown
             // 
             this.btnMoveDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMoveDown.Location = new System.Drawing.Point(223, 119);
+            this.btnMoveDown.Location = new System.Drawing.Point(223, 148);
             this.btnMoveDown.Name = "btnMoveDown";
             this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
             this.btnMoveDown.TabIndex = 51;
@@ -197,7 +208,7 @@
             // btnMoveUp
             // 
             this.btnMoveUp.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMoveUp.Location = new System.Drawing.Point(142, 119);
+            this.btnMoveUp.Location = new System.Drawing.Point(142, 148);
             this.btnMoveUp.Name = "btnMoveUp";
             this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
             this.btnMoveUp.TabIndex = 50;
@@ -211,7 +222,7 @@
             this.groupColumn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupColumn.Location = new System.Drawing.Point(0, 0);
             this.groupColumn.Name = "groupColumn";
-            this.groupColumn.Size = new System.Drawing.Size(427, 165);
+            this.groupColumn.Size = new System.Drawing.Size(427, 194);
             this.groupColumn.TabIndex = 1;
             this.groupColumn.TabStop = false;
             this.groupColumn.Text = "Column Name";
@@ -222,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupColumn);
             this.Name = "ColumnSettings";
-            this.Size = new System.Drawing.Size(427, 165);
+            this.Size = new System.Drawing.Size(427, 194);
             this.Load += new System.EventHandler(ColumnSettings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -241,6 +252,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chkStatic;
         private System.Windows.Forms.ComboBox cmbColumnType;
         private System.Windows.Forms.ComboBox cmbComparison;
         private System.Windows.Forms.Button btnRemoveColumn;
