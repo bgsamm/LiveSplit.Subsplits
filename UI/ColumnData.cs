@@ -7,13 +7,15 @@ namespace LiveSplit.UI
     {
         public string Name { get; set; }
         public ColumnType Type { get; set; }
+        public Boolean Static { get; set; }
         public string Comparison { get; set; }
         public string TimingMethod { get; set; }
 
-        public ColumnData(string name, ColumnType type, string comparison, string method)
+        public ColumnData(string name, ColumnType type, Boolean static_, string comparison, string method)
         {
             Name = name;
             Type = type;
+            Static = static_;
             Comparison = comparison;
             TimingMethod = method;
         }
@@ -23,6 +25,7 @@ namespace LiveSplit.UI
             var element = (XmlElement)node;
             return new ColumnData(element["Name"].InnerText,
                 (ColumnType)Enum.Parse(typeof(ColumnType), element["Type"].InnerText),
+                (Boolean)Enum.Parse(typeof(Boolean), element["Static"].InnerText),
                 element["Comparison"].InnerText,
                 element["TimingMethod"].InnerText);
         }
