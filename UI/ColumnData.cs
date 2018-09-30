@@ -25,7 +25,7 @@ namespace LiveSplit.UI
             var element = (XmlElement)node;
             return new ColumnData(element["Name"].InnerText,
                 (ColumnType)Enum.Parse(typeof(ColumnType), element["Type"].InnerText),
-                (Boolean)Enum.Parse(typeof(Boolean), element["Static"].InnerText),
+                Boolean.Parse(element["Static"].InnerText),
                 element["Comparison"].InnerText,
                 element["TimingMethod"].InnerText);
         }
@@ -35,6 +35,7 @@ namespace LiveSplit.UI
             return SettingsHelper.CreateSetting(document, element, "Version", "1.5") ^
             SettingsHelper.CreateSetting(document, element, "Name", Name) ^
             SettingsHelper.CreateSetting(document, element, "Type", Type) ^
+            SettingsHelper.CreateSetting(document, element, "Static", Static) ^
             SettingsHelper.CreateSetting(document, element, "Comparison", Comparison) ^
             SettingsHelper.CreateSetting(document, element, "TimingMethod", TimingMethod);
         }

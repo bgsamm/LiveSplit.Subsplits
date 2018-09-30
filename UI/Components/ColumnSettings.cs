@@ -79,9 +79,11 @@ namespace LiveSplit.UI.Components
             UpdateComparisonItems();
 
             txtName.DataBindings.Clear();
+            chkStatic.DataBindings.Clear();
             cmbColumnType.DataBindings.Clear();
             cmbTimingMethod.DataBindings.Clear();
             txtName.DataBindings.Add("Text", this, "ColumnName", false, DataSourceUpdateMode.OnPropertyChanged);
+            chkStatic.DataBindings.Add("Checked", this, "Static", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbColumnType.DataBindings.Add("SelectedItem", this, "Type", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbTimingMethod.DataBindings.Add("SelectedItem", this, "TimingMethod", false, DataSourceUpdateMode.OnPropertyChanged);
         }
