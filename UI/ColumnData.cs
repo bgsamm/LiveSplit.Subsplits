@@ -23,9 +23,10 @@ namespace LiveSplit.UI
         public static ColumnData FromXml(XmlNode node)
         {
             var element = (XmlElement)node;
+
             return new ColumnData(element["Name"].InnerText,
                 (ColumnType)Enum.Parse(typeof(ColumnType), element["Type"].InnerText),
-                Boolean.Parse(element["Static"].InnerText),
+                element["Static"] != null ? Boolean.Parse(element["Static"].InnerText) : false,
                 element["Comparison"].InnerText,
                 element["TimingMethod"].InnerText);
         }
