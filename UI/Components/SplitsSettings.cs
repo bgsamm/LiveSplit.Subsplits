@@ -262,8 +262,8 @@ namespace LiveSplit.UI.Components
             btnLabelColor.DataBindings.Add("BackColor", this, "LabelsColor", false, DataSourceUpdateMode.OnPropertyChanged);
 
             ColumnsList = new List<ColumnSettings>();
-            ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.Delta, false, "Current Comparison", "Current Timing Method") });
-            ColumnsList.Add(new ColumnSettings(CurrentState, "Time", ColumnsList) { Data = new ColumnData("Time", ColumnType.SplitTime, false, "Current Comparison", "Current Timing Method") });
+            ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.Delta, "Current Comparison", "Current Timing Method") });
+            ColumnsList.Add(new ColumnSettings(CurrentState, "Time", ColumnsList) { Data = new ColumnData("Time", ColumnType.SplitTime, "Current Comparison", "Current Timing Method") });
         }
 
         void chkColumnLabels_CheckedChanged(object sender, EventArgs e)
@@ -566,12 +566,12 @@ namespace LiveSplit.UI.Components
                 ColumnsList.Clear();
                 if (SettingsHelper.ParseBool(element["ShowSplitTimes"]))
                 {
-                    ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.Delta, false, HeaderComparison, "Current Timing Method") });
-                    ColumnsList.Add(new ColumnSettings(CurrentState, "Time", ColumnsList) { Data = new ColumnData("Time", ColumnType.SplitTime, false, HeaderComparison, "Current Timing Method") });
+                    ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.Delta, HeaderComparison, "Current Timing Method") });
+                    ColumnsList.Add(new ColumnSettings(CurrentState, "Time", ColumnsList) { Data = new ColumnData("Time", ColumnType.SplitTime, HeaderComparison, "Current Timing Method") });
                 }
                 else
                 {
-                    ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.DeltaorSplitTime, false, HeaderComparison, "Current Timing Method") });
+                    ColumnsList.Add(new ColumnSettings(CurrentState, "+/-", ColumnsList) { Data = new ColumnData("+/-", ColumnType.DeltaorSplitTime, HeaderComparison, "Current Timing Method") });
                 }
             }
             if (version >= new Version(1, 3))

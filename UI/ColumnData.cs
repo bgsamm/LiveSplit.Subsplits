@@ -11,6 +11,11 @@ namespace LiveSplit.UI
         public string Comparison { get; set; }
         public string TimingMethod { get; set; }
 
+        public ColumnData(string name, ColumnType type, string comparison, string method)
+            : this(name, type, false, comparison, method)
+        {
+        }
+
         public ColumnData(string name, ColumnType type, Boolean static_, string comparison, string method)
         {
             Name = name;
@@ -23,7 +28,6 @@ namespace LiveSplit.UI
         public static ColumnData FromXml(XmlNode node)
         {
             var element = (XmlElement)node;
-
             return new ColumnData(element["Name"].InnerText,
                 (ColumnType)Enum.Parse(typeof(ColumnType), element["Type"].InnerText),
                 element["Static"] != null ? Boolean.Parse(element["Static"].InnerText) : false,
